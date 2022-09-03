@@ -28,7 +28,7 @@ const displayCatagorisNewsPortal = async () => {
     div.classList.add("md:px-3");
     div.innerHTML = `
         
-        <button class="focus:ring-2 py-2 px-3 rounded " onclick="dynamicData(${data.category_id})">${data.category_name} </button>
+        <button class=" py-2 px-3 rounded " onclick="dynamicData(${data.category_id})">${data.category_name} </button>
         `;
     catagorisContainer.appendChild(div);
   });
@@ -63,7 +63,7 @@ const displayData = (data) => {
   data.forEach((element) => {
     const div = document.createElement("div");
     div.classList.add("py-5");
-    // div.classList.add('')
+
     div.innerHTML = `
         <div class="card card-side bg-base-100 shadow-xl  lg:flex-nowrap flex-wrap ">
         <img src="${element.image_url}" alt="Movie" class="lg:w-1/3 ">
