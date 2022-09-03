@@ -1,12 +1,12 @@
-const loadingSpinner = (isLoading) => {
-  const pulseSpinner = document.getElementById("pulse-spinner");
+const loadingLoader = (isLoading) => {
+  const loader = document.getElementById("loader");
   if (isLoading) {
-    pulseSpinner.classList.remove("hidden");
+    loader.classList.remove("hidden");
   } else {
-    pulseSpinner.classList.add("hidden");
+    loader.classList.add("hidden");
   }
 };
-loadingSpinner(false);
+loadingLoader(false);
 
 const loadNewscategories = async () => {
   const url = "https://openapi.programming-hero.com/api/news/categories";
@@ -39,7 +39,7 @@ displayCatagoriesNews();
 //   start card
 
 const dynamicData = (data) => {
-  loadingSpinner(true);
+  loadingLoader(true);
   fetch(`https://openapi.programming-hero.com/api/news/category/0${data}`)
     .then((res) => res.json())
     .then((result) => displayData(result.data));
@@ -57,7 +57,7 @@ const displayData = (data) => {
   // no items found
   if (data.length === 0) {
     lengthCount.innerText = "No ";
-    loadingSpinner(false);
+    loadingLoader(false);
   }
   // all card  news
   const cardContainer = document.getElementById("card-container");
@@ -108,7 +108,7 @@ const displayData = (data) => {
      `;
     cardContainer.appendChild(div);
 
-    loadingSpinner(false);
+    loadingLoader(false);
   });
 };
 
